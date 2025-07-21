@@ -13,6 +13,9 @@ pkg_check_modules(LIBNFC REQUIRED IMPORTED_TARGET libnfc)
 # paho.mqtt.cpp via find_package
 find_package(PahoMqttCpp REQUIRED)
 
+# yaml-cpp via find_package
+find_package(yaml-cpp REQUIRED)
+
 # Output bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -35,6 +38,7 @@ target_include_directories(nfc_tag_id_reader_cpp PRIVATE
 target_link_libraries(nfc_tag_id_reader_cpp PRIVATE
     PkgConfig::LIBNFC
     PahoMqttCpp::paho-mqttpp3
+    yaml-cpp
 )
 
 # Install output

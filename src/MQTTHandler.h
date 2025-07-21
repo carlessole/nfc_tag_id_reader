@@ -42,7 +42,7 @@ private:
     bool disconnect();
 
     Conf _config = {.server_address = "tcp://localhost:1883",
-                    .client_id = "nfc_tag_id_reader_cpp_client"};
+                    .client_id = "my_client_id"};
 
     mqtt::async_client _client;
     bool _connected = false;

@@ -1,0 +1,7 @@
+nfc_tag_topic: "selrac/nfc_handler/tags"
+mqtt:
+  server_address: "tcp://localhost:1883"
+  client_id: "nfc_tag_id_reader_cpp_client"
+nfc:
+  debug: true
+  read_data: false
