@@ -17,6 +17,17 @@
         "CMAKE_BUILD_TYPE": "Release",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/dist/default"
       }
+    },
+    {
+      "name": "Debug",
+      "displayName": "Debug: Build and local installation to ./dist",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/debug",
+      "installDir": "${sourceDir}/dist/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/dist/debug"
+      }
     }
   ]
 }

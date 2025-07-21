@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/dist/default/bin/nfc_tag_id_reader",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+        },
+        {
+            "name": "Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/dist/debug/bin/nfc_tag_id_reader",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb",
+        }
+    ]
+
+}
