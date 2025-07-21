@@ -5,7 +5,16 @@
 
 #include <nfc/nfc.h>
 
+#include "MQTTHandler.h"
+
 #if __cplusplus
+
+class NFCHandlerHooks
+{
+public:
+    virtual bool publish_tag_id(const std::string &tag_id) = 0;
+    virtual ~NFCHandlerHooks() = default;
+};
 
 class NFCHandler
 {
@@ -21,7 +30,7 @@ public:
     NFCHandler() = default;
 
     // Parameterized constructor
-    NFCHandler(const Conf &config) : _config(config) {}
+    NFCHandler(const Conf &config, NFCHandlerHooks &hooks) : _config(config), _hooks(hooks) {}
 
     // Copy constructor
     NFCHandler(const NFCHandler &other) = delete; // Deleted to prevent copying
@@ -49,7 +58,8 @@ private:
     nfc_context *_context = nullptr;
     nfc_device *_device = nullptr;
 
-    Conf _config = {.debug = true, .read_data = true};
+    const Conf _config = {.debug = true, .read_data = true};
+    NFCHandlerHooks &_hooks;
 };
 
 #endif // __cplusplus

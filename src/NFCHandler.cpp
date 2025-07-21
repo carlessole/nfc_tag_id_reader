@@ -78,8 +78,8 @@ bool NFCHandler::tic()
                     std::cout << "Detected tag UID: " << uid << std::endl;
                     // std::cout << "Publishing RFID token: " << everest::staging::helpers::redact(token) << std::endl;
                 }
-                // TODO: Publish RFID token
-                // p_auth_token_provider->publish_provided_token(token);
+
+                _hooks.publish_tag_id(uid);
 
                 if (_config.read_data)
                 {
