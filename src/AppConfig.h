@@ -73,6 +73,6 @@ namespace YAML
     };
 };
 
-#endif
+#endif // __cplusplus
 
 #endif // APPCONFIG_H

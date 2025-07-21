@@ -16,6 +16,9 @@ find_package(PahoMqttCpp REQUIRED)
 # yaml-cpp via find_package
 find_package(yaml-cpp REQUIRED)
 
+# nhlohmann/json via find_package
+find_package(nlohmann_json REQUIRED)
+
 # Output bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
@@ -39,6 +42,7 @@ target_link_libraries(nfc_tag_id_reader_cpp PRIVATE
     PkgConfig::LIBNFC
     PahoMqttCpp::paho-mqttpp3
     yaml-cpp
+    nlohmann_json::nlohmann_json
 )
 
 # Install output

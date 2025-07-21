@@ -4,6 +4,7 @@
 #include "MQTTHandler.h"
 
 #include "AppConfig.h"
+#include "TagId.h"
 
 #include "yaml-cpp/yaml.h"
 
@@ -20,7 +21,12 @@ public:
 
         if (mqtt_handler != nullptr)
         {
-            ok = mqtt_handler->publish(_app_config.nfc_tag_topic, tag_id);
+            std::string payload;
+            TagId tag_id_obj = {.type = "ISO14443A", .id = tag_id};
+            nlohmann::json tag_id_json = tag_id_obj;
+            payload = tag_id_json.dump();
+
+            ok = mqtt_handler->publish(_app_config.nfc_tag_topic, payload);
         }
 
         return ok;
