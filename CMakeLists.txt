@@ -12,7 +12,7 @@ pkg_check_modules(LIBNFC REQUIRED IMPORTED_TARGET libnfc)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 # Add source files
-add_executable(nfc_tag_id_reader_cpp src/main.cpp)
+add_executable(nfc_tag_id_reader_cpp src/main.cpp src/NFCHandler.cpp)
 
 target_include_directories(nfc_tag_id_reader_cpp PRIVATE
     ${CMAKE_SOURCE_DIR}/src
