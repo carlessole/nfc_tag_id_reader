@@ -1,4 +1,4 @@
-# nfc_tag_id_reader
+# nfc_tag_id_reader_cpp
 
 This project uses the `libnfc` library to read an NFC tag ID using a PN532 reader and publishes that tag ID to a local MQTT broker.
 
